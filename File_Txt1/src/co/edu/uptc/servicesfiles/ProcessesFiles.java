@@ -59,6 +59,18 @@ public class ProcessesFiles {
         }
     }
 
+    public byte[] extraerStringByte() throws Exception {
+        this.openFile();
+        String cont="";
+        String conteded="";
+        while ((cont=bufferedReader.readLine())!=null) {
+            conteded=conteded+cont;
+        }
+        byte[] bytes= conteded.getBytes();
+        this.closedFile();
+        return bytes;
+    }
+
     // private List<String> changeBase64() {
     //     String base64="";
     //     for (String contentbase64 : content) {
